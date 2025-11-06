@@ -1,0 +1,343 @@
+<!-- Chosen Palette: Live Animated Dominant Blue (Soft Blue Animated Background, Bright Blue Accent, White Content Cards) -->
+<!-- Goal: Transform the main view into a Profile Landing Page for the speaker, DAVID AHMAD ABRORY, S.I.Kom, making the strategic content the secondary, reference-based focus. -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil & Strategi Konten Berdampak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* New animated blue background */
+            background: linear-gradient(-45deg, #e0f2fe, #bfdbfe, #93c5fd, #60a5fa);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            color: #1f2937; /* Dark Charcoal Text */
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .nav-active {
+            @apply bg-blue-600 text-white shadow-lg;
+        }
+
+        /* Styling for the Profile Image Placeholder */
+        .profile-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: #bfdbfe; /* Soft blue */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb; /* Strong blue */
+            font-size: 3rem;
+            font-weight: bold;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-700 sm:text-2xl">
+                Strategi Konten Berdampak
+            </h1>
+            <nav id="main-nav">
+                <!-- Navigasi ke bagian bawah yang berisi materi -->
+                <a href="#formula" class="text-sm font-medium text-gray-600 hover:text-blue-600 px-3 transition duration-150 hidden sm:inline-block">Formula Inti</a>
+                <a href="#algoritma" class="text-sm font-medium text-gray-600 hover:text-blue-600 px-3 transition duration-150 hidden sm:inline-block">Algoritma & Waktu</a>
+                <a href="#praktik" class="text-sm font-medium text-gray-600 hover:text-blue-600 px-3 transition duration-150 hidden sm:inline-block">Toolkit Praktik</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- LANDING PAGE SECTION: PROFIL NARASUMBER (Halaman Utama) -->
+        <section id="profil" class="mb-16 p-8 bg-white rounded-3xl shadow-2xl transform hover:scale-[1.01] transition duration-500 ease-in-out">
+            <div class="flex flex-col items-center text-center">
+                
+                <!-- Profile Image Placeholder -->
+                <div class="profile-placeholder mb-6">
+                    DA
+                </div>
+                
+                <p class="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-1">
+                    Narasumber,Pengamat, & Praktisi konten
+                </p>
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-3 leading-tight">
+                    DAVID AHMAD ABRORY, S.I.Kom
+                </h2>
+                <h3 class="text-xl font-medium text-gray-600 mb-4">
+                    Guru Produktif DKV NUSAKA
+                </h3>
+
+                <p class="max-w-3xl text-lg text-gray-700 mt-4">
+                    Spesialis dalam Strategi Media Sosial, Desain Komunikasi Visual (DKV), dan Produksi Konten Video Cepat. Berfokus membantu tim muda mengubah dokumentasi acara menjadi aset digital yang efisien, berinteraksi tinggi, dan membawa dampak positif bagi citra organisasi.
+                </p>
+
+                <a href="#formula" class="mt-8 px-8 py-3 bg-blue-600 text-white font-bold rounded-full text-lg shadow-xl hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1">
+                    Lihat Materi Strategi Konten & Toolkit <span aria-hidden="true">&darr;</span>
+                </a>
+            </div>
+        </section>
+        <!-- END LANDING PAGE SECTION -->
+
+
+        <!-- Konten Dashboard LAMA dimulai dari sini (Sekarang menjadi materi referensi) -->
+        <div class="space-y-12">
+            
+            <!-- Bagian 1: Formula Inti Konten (HOOK-STORY-CTA) -->
+            <section id="formula" class="pt-4">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600 border-b pb-2">1. Formula Inti Konten Berdampak (K.I.S.S.)</h2>
+                <p class="mb-6 text-gray-600">Bagian ini memvisualisasikan struktur konten wajib HOOK–STORY–CTA dan prinsip K.I.S.S. (Keep It Simple, Stupid). Klik setiap elemen untuk melihat definisinya, durasi ideal, dan contoh penerapannya dalam konteks kegiatan atau acara Anda. Ini adalah fondasi untuk mencapai *completion rate* tinggi.</p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <button onclick="showFormulaDetail('hook')" class="formula-btn bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-left">
+                        <span class="text-4xl font-extrabold text-red-500 block mb-2">① HOOK</span>
+                        <p class="text-lg font-semibold">Tarik Perhatian (3 Detik Pertama)</p>
+                    </button>
+                    <button onclick="showFormulaDetail('story')" class="formula-btn bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-left">
+                        <span class="text-4xl font-extrabold text-yellow-500 block mb-2">② STORY</span>
+                        <p class="text-lg font-semibold">Berikan Bukti (10-30 Detik)</p>
+                    </button>
+                    <button onclick="showFormulaDetail('cta')" class="formula-btn bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-left">
+                        <span class="text-4xl font-extrabold text-green-500 block mb-2">③ CTA</span>
+                        <p class="text-lg font-semibold">Ajak Interaksi (5 Detik Akhir)</p>
+                    </button>
+                </div>
+
+                <div id="formula-detail" class="mt-6 p-6 bg-white border-l-4 border-blue-500 rounded-xl shadow-inner hidden">
+                    <h3 id="detail-title" class="text-xl font-bold mb-3 text-gray-800"></h3>
+                    <p id="detail-duration" class="text-sm text-blue-600 mb-2 font-medium"></p>
+                    <p id="detail-explanation" class="text-gray-700 mb-3"></p>
+                    <p id="detail-example" class="italic text-gray-500 border-t pt-2"></p>
+                </div>
+            </section>
+
+            <!-- Bagian 2: Algoritma & Waktu Unggah -->
+            <section id="algoritma" class="pt-4">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600 border-b pb-2">2. Algoritma Jangkauan Maksimal & Waktu Unggah</h2>
+                <p class="mb-6 text-gray-600">Jangkauan konten dikendalikan oleh Algoritma Platform. Di sini, kita akan melihat tiga pilar algoritma dan memvisualisasikan waktu unggah terbaik untuk audiens pelajar/sekolah.</p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+                        <p class="text-sm font-semibold text-gray-500">Pilar #1 (Paling Penting)</p>
+                        <h3 class="text-2xl font-extrabold text-gray-800 my-2">WATCH TIME</h3>
+                        <p class="text-sm text-gray-600">Dihitung dari persentase penonton yang menonton video hingga selesai (*Completion Rate*). Target: 100%.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+                        <p class="text-sm font-semibold text-gray-500">Pilar #2</p>
+                        <h3 class="text-2xl font-extrabold text-gray-800 my-2">ENGAGEMENT</h3>
+                        <p class="text-sm text-gray-600">Interaksi berharga: *Save* (Simpan) dan *Share* (Bagikan) memiliki nilai lebih tinggi daripada *Like*.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md flex flex-col justify-between">
+                        <p class="text-sm font-semibold text-gray-500">Pilar #3</p>
+                        <h3 class="text-2xl font-extrabold text-gray-800 my-2">PROXIMITY</h3>
+                        <p class="text-sm text-gray-600">Konten akan diprioritaskan untuk pengikut dan audiens dengan minat serupa (gunakan **Hashtag** relevan).</p>
+                    </div>
+                </div>
+
+                <!-- Chart untuk Waktu Unggah -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-gray-700">Distribusi Waktu Unggah Terbaik (WIB)</h3>
+                    <div class="chart-container">
+                        <canvas id="postingTimeChart"></canvas>
+                    </div>
+                    <div id="time-rationale" class="mt-4 p-3 bg-blue-50 border-l-4 border-blue-400 text-sm rounded">
+                        <p class="font-medium text-blue-800">Pilih segmen waktu di diagram untuk melihat alasan mengapa waktu tersebut efektif.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bagian 3: Toolkit Praktik (Canva & CapCut) -->
+            <section id="praktik" class="pt-4">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600 border-b pb-2">3. Toolkit Praktik: Panduan Langkah Cepat</h2>
+                <p class="mb-6 text-gray-600">Pelajari langkah-langkah praktis untuk membuat Poster *High-Impact* dan Video Pendek *Berdampak Maksimal* menggunakan dua aplikasi seluler utama.</p>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex border-b mb-4">
+                        <button id="tab-poster" onclick="showTutorial('poster')" class="px-4 py-2 text-sm font-semibold rounded-t-lg transition duration-150 border-b-2 border-transparent">
+                            Poster (Canva)
+                        </button>
+                        <button id="tab-video" onclick="showTutorial('video')" class="px-4 py-2 text-sm font-semibold rounded-t-lg transition duration-150 border-b-2 border-transparent">
+                            Video Pendek (CapCut)
+                        </button>
+                    </div>
+
+                    <div id="tutorial-poster" class="tutorial-content">
+                        <h3 class="text-xl font-bold mb-3 text-gray-700">3 Langkah Cepat Poster Anti-Biasa (Canva)</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li>**Pilih Template & Hapus Elemen:** Cari template *Minimalist* atau *Bold Text*. Hapus 50% ornamen yang tidak perlu. Semakin bersih, semakin kuat pesannya.</li>
+                            <li>**Ganti Teks (1-3 Kata):** Teks harus singkat, padat, dan mengena. Contoh: **SUKSES. 2025.** (Bukan kalimat panjang).</li>
+                            <li>**Tambahkan Visual High Contrast:** Gunakan foto yang fokus pada detail (ekspresi mata, seragam, logo). Tip: Gunakan filter Hitam Putih (B&W) untuk meningkatkan drama visual.</li>
+                        </ol>
+                    </div>
+
+                    <div id="tutorial-video" class="tutorial-content hidden">
+                        <h3 class="text-xl font-bold mb-3 text-gray-700">Teknik Editing CapCut (Fokus 5 Menit)</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                            <li>**Gunakan Fitur Template:** Ini adalah cara tercepat. Ganti 5-10 klip/foto Anda, CapCut akan mengatur *beat* dan transisi otomatis.</li>
+                            <li>**Sinkronisasi dengan Beat (Manual):** Jika tanpa template, gunakan fitur **"Potong Musik"** untuk menandai *beat*. Potong klip video Anda tepat di titik beat untuk hasil yang profesional.</li>
+                            <li>**Teks Cepat (Quick Text):** Tambahkan teks motivasi yang muncul dan hilang dengan cepat, maksimal 1-2 kata per klip (Contoh: *FOKUS. SOLID.*).</li>
+                            <li>**Fokus HOOK 3 Detik:** Pastikan momen paling emosional/dramatis ada di awal video Anda.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Data untuk Formula Inti (HOOK, STORY, CTA)
+            const formulaData = {
+                hook: {
+                    title: "HOOK: Tarik Perhatian",
+                    duration: "Durasi Ideal: 3 Detik Awal",
+                    explanation: "Fungsinya adalah untuk menghentikan jempol penonton agar tidak *scroll* melewati konten Anda. Harus mengandung momen paling menarik, emosional, atau mengejutkan dari kegiatan.",
+                    example: "Contoh: 'Inilah 3 detik paling menegangkan sebelum acara dimulai.' (Lalu potong ke momen persiapan intens atau *countdown*)."
+                },
+                story: {
+                    title: "STORY: Berikan Bukti & Proses",
+                    duration: "Durasi Ideal: 10 - 30 Detik",
+                    explanation: "Ini adalah inti dari konten, menunjukkan bukti nyata perjuangan, proses kerja tim, atau keseruan di balik layar. Orang suka melihat proses di balik hasil yang sukses (*The Struggle*).",
+                    example: "Contoh: Kompilasi klip pendek kerja keras tim (rapat/persiapan), momen canda, kebersamaan di tengah kesibukan."
+                },
+                cta: {
+                    title: "CTA: Ajak Interaksi",
+                    duration: "Durasi Ideal: 5 Detik Akhir",
+                    explanation: "Ajakan Jelas untuk bertindak. Ajak penonton berkomentar, membagikan, atau menyimpan konten. *Save* dan *Share* adalah interaksi paling bernilai di mata algoritma.",
+                    example: "Contoh: 'Komen, tebak berapa jam kami begadang untuk acara ini!' atau 'Daftar sekarang, klik link di bio!'"
+                }
+            };
+
+            const detailBox = document.getElementById('formula-detail');
+            const detailTitle = document.getElementById('detail-title');
+            const detailDuration = document.getElementById('detail-duration');
+            const detailExplanation = document.getElementById('detail-explanation');
+            const detailExample = document.getElementById('detail-example');
+            const formulaButtons = document.querySelectorAll('.formula-btn');
+
+            window.showFormulaDetail = (key) => {
+                const data = formulaData[key];
+
+                formulaButtons.forEach(btn => btn.classList.remove('bg-blue-100', 'border-2', 'border-blue-500'));
+                document.querySelector(`.formula-btn:nth-child(${key === 'hook' ? 1 : key === 'story' ? 2 : 3})`).classList.add('bg-blue-100', 'border-2', 'border-blue-500');
+
+                detailTitle.textContent = data.title;
+                detailDuration.textContent = data.duration;
+                detailExplanation.textContent = data.explanation;
+                detailExample.textContent = 'Contoh Aplikasi: ' + data.example;
+                detailBox.classList.remove('hidden');
+            };
+
+            // Chart.js untuk Waktu Unggah
+            const timeData = [
+                { time: '12.00 - 13.00 WIB', hours: 1, label: 'Istirahat Siang (Siswa)', rationale: 'Waktu istirahat makan siang, pelajar aktif membuka HP.' },
+                { time: '15.00 - 17.00 WIB', hours: 2, label: 'Pulang Sekolah/Sore', rationale: 'Waktu santai setelah aktivitas formal sekolah selesai.' },
+                { time: '19.00 - 21.00 WIB', hours: 2, label: 'Prime Time Malam', rationale: 'Waktu puncak di mana semua orang santai, cocok untuk konten *deep-dive* atau pengumuman penting.' }
+            ];
+
+            const ctx = document.getElementById('postingTimeChart').getContext('2d');
+            const chartData = {
+                labels: timeData.map(d => d.time),
+                datasets: [{
+                    data: timeData.map(d => d.hours),
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)', // Blue
+                        'rgba(16, 185, 129, 0.8)', // Green
+                        'rgba(245, 158, 11, 0.8)'  // Amber
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            };
+
+            const postingTimeChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: false,
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => {
+                                    const label = context.label || '';
+                                    const value = context.parsed || 0;
+                                    return `${label}: ${value} Jam Efektif`;
+                                }
+                            }
+                        }
+                    },
+                    onClick: (e, elements) => {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            const selectedTime = timeData[index];
+                            document.getElementById('time-rationale').innerHTML = `
+                                <p class="font-bold text-blue-800">${selectedTime.time} - ${selectedTime.label}</p>
+                                <p class="text-sm text-gray-700">${selectedTime.rationale}</p>
+                            `;
+                        }
+                    }
+                },
+            });
+
+            // Logika Tab Tutorial
+            const tabPoster = document.getElementById('tab-poster');
+            const tabVideo = document.getElementById('tab-video');
+            const contentPoster = document.getElementById('tutorial-poster');
+            const contentVideo = document.getElementById('tutorial-video');
+
+            window.showTutorial = (type) => {
+                if (type === 'poster') {
+                    tabPoster.classList.add('nav-active');
+                    tabVideo.classList.remove('nav-active');
+                    contentPoster.classList.remove('hidden');
+                    contentVideo.classList.add('hidden');
+                } else if (type === 'video') {
+                    tabVideo.classList.add('nav-active');
+                    tabPoster.classList.remove('nav-active');
+                    contentVideo.classList.remove('hidden');
+                    contentPoster.classList.add('hidden');
+                }
+            };
+
+            // Inisialisasi tampilan awal
+            showTutorial('poster'); 
+            showFormulaDetail('hook'); 
+        });
+    </script>
+</body>
+</html>
